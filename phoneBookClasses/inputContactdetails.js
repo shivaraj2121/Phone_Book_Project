@@ -6,13 +6,14 @@ var prompt = promptSync();
 var phoneBook = new addContact_1.default();
 while (true) {
     try {
-        console.log("n1. Add Contact\n2. Update Contact\n3. Delete Contact\n4. Display Contacts\n5. Exit");
+        console.log("\n1. Add Contact\n2. Update Contact\n3. Delete Contact\n4. Display Contacts\n5. Exit");
         var choice = parseInt(prompt("Enter your choice: "));
         switch (choice) {
             case 1:
                 var nameToAdd = prompt("Enter name: ");
                 var phoneNumberToAdd = prompt("Enter phone number: ");
-                phoneBook.addContact(nameToAdd, phoneNumberToAdd);
+                var alterPhonenumberToAdd = prompt('Enter alternate phone number');
+                phoneBook.addContact(nameToAdd, phoneNumberToAdd, alterPhonenumberToAdd);
                 break;
             case 2:
                 var nameToUpdate = prompt("Enter name to update: ");
@@ -28,6 +29,7 @@ while (true) {
                 break;
             case 5:
                 console.log("Exiting...");
+                return;
             default:
                 console.log("Invalid choice!");
         }

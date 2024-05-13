@@ -15,7 +15,8 @@ var PhoneBook = /** @class */ (function () {
             console.log("Contact \"".concat(name, "\" updated successfully."));
         }
         else {
-            console.log("Contact \"".concat(name, "\" not found."));
+            console.log("Contact \"".concat(name, "\" not found."));1
+            
         }
     };
     PhoneBook.prototype.deleteContact = function (name) {
@@ -31,7 +32,7 @@ var PhoneBook = /** @class */ (function () {
     PhoneBook.prototype.displayContacts = function () {
         console.log("Contacts:");
         this.contacts.forEach(function (contact) {
-            console.log("".concat(contact.name, ": ").concat(contact.phoneNumber));
+            console.log("".concat(contact.name, ": ").concat(contact.phoneNumber).concat(contact.alterPhonenumber));
         });
     };
     PhoneBook.prototype.findContact = function (name) {

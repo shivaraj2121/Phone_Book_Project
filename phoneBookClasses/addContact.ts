@@ -5,11 +5,11 @@ export default class PhoneBook {
     constructor() {
         this.contacts = [];
     }
-    addContact(name: string, phoneNumber: string ,alterPhonenumber?:string) {
+    addContact(name: string, phoneNumber: string ,alterPhonenumber:string) {
         this.contacts.push({ name, phoneNumber ,alterPhonenumber});
         console.log(`Contact "${name}" added successfully.`);
     }
-    updateContact(name: string, newPhoneNumber: string) {
+    updateContact(name: string, newPhoneNumber: string, alterNatenewPhoneNumberToAdd: string) {
         const contact = this.findContact(name);
         if (contact) {
             contact.phoneNumber = newPhoneNumber;
@@ -29,8 +29,8 @@ export default class PhoneBook {
     }
     displayContacts() {
         console.log("Contacts:");
-        this.contacts.forEach((contact: { name: any; phoneNumber: any; }) => {
-            console.log(`${contact.name}: ${contact.phoneNumber}`);
+        this.contacts.forEach((contact: { name: any; phoneNumber: any; alterPhoneNumber:any}) => {
+            console.log(`${contact.name}: ${contact.phoneNumber}:${contact.alterPhoneNumber}`);
         });
     }
     findContact(name: any) {

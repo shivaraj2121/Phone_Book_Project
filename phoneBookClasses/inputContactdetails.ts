@@ -1,4 +1,4 @@
-import *as  promptSync from 'prompt-sync'
+import  promptSync from 'prompt-sync'
 import PhoneBook from './addContact';
 const prompt =promptSync();
 const phoneBook = new PhoneBook();
@@ -18,7 +18,8 @@ while (true) {
         case 2:
             const nameToUpdate = prompt("Enter name to update: ");
             const newPhoneNumber = prompt("Enter new phone number: ");
-            phoneBook.updateContact(nameToUpdate, newPhoneNumber);
+            const alternewPhonenumberToAdd =prompt('Enter alternate phone number')
+            phoneBook.updateContact(nameToUpdate, newPhoneNumber,alternewPhonenumberToAdd);
             break;
         case 3:
             const nameToDelete = prompt("Enter name to delete: ");
